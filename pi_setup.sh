@@ -2,6 +2,7 @@
 
 ###########################################################################
 ############## This script was not written to handle failures #############
+############## Update update while installing R PI Jessy      #############
 ###########################################################################
 
 # This is what upgrade printed out.
