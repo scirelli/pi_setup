@@ -28,8 +28,9 @@
 ##############################
 # Setup Git                  #
 ##############################
-git config --global user.email "scirelli@gmail.com"
-git config --global user.name "Steve Cirelli"
+#git config --global user.email "scirelli@gmail.com"
+#git config --global user.name "Steve Cirelli"
+#git config --global credential.helper cache
 ###############################
 ###############################
 
@@ -83,9 +84,26 @@ git config --global user.name "Steve Cirelli"
 ##############################
 
 ##############################
+# Synergy                    #
+##############################
+#sudo apt-get install synergy
+#printf "[Desktop Entry]\nType=Application\nExec=synergyc --log /var/log/synergy.log Game-PC" > ~/.config/autostart/synergy.desktop
+#echo "#!/bin/bash" > ~/synergy2.sh
+#echo "sudo -u pi /usr/bin/synergyc --daemon --log /var/log/synergy.log Game-PC &" >> ~/synergy2.sh
+#chmod 744 ~/synergy2.sh
+##############################
+##############################
+
+##############################
 # Retro PI                   #
 ##############################
-# For retroPI get file system table
-#git clone --depth=1 https://github.com/scirelli/pi_retro_fstab.git ~/Downloads/pi_retro_fstab
+sudo apt-get install lsb-release dialog
+git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git ~/Downloads/RetroPie-Setup
+cd ~/Downloads/RetroPie-Setup
+chmod +x retropie_setup.sh
+sudo ./retropie_setup.sh
 
-#sudo apt-get install synergyc
+# For retroPI get file system table. Need to add this to you /etc/fstab
+#git clone --depth=1 https://github.com/scirelli/pi_retro_fstab.git ~/Downloads/pi_retro_fstab
+##############################
+##############################
