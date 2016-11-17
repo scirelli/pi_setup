@@ -17,9 +17,9 @@
 ###############################
 #sudo apt-get update && sudo apt-get upgrade
 
-sudo apt-get -y install screen
-sudo apt-get -y install vim
-sudo apt-get -y install vim-gnome
+#sudo apt-get -y install screen
+#sudo apt-get -y install vim
+#sudo apt-get -y install vim-gnome
 #sudo apt-get -y install npm
 #sudo apt-get -y install git
 ###############################
@@ -75,7 +75,7 @@ sudo apt-get -y install vim-gnome
 #git clone --depth=1 https://github.com/tpope/vim-surround.git ~/.vim/bundle/vim-surround
 
 # Install emmet-vim
-git clone --depth=1 https://github.com/mattn/emmet-vim.git ~/.vim/bundle/emmet-vim
+#git clone --depth=1 https://github.com/mattn/emmet-vim.git ~/.vim/bundle/emmet-vim
 
 # Grab my vimrc
 #git clone --depth=1 https://github.com/scirelli/vimrc.git ~/Downloads/vimrc
