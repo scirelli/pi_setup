@@ -17,11 +17,11 @@
 ###############################
 #sudo apt-get update && sudo apt-get upgrade
 
-#sudo apt-get install screen
-#sudo apt-get install vim
-#sudo apt-get install vim-gnome
-#sudo apt-get install npm
-#sudo apt-get install git
+sudo apt-get -y install screen
+sudo apt-get -y install vim
+sudo apt-get -y install vim-gnome
+#sudo apt-get -y install npm
+#sudo apt-get -y install git
 ###############################
 ###############################
 
@@ -63,7 +63,7 @@
 ##############################
 
 ##############################
-# VIM Setup	                 #
+# VIM Setup	             #
 ##############################
 # Install Pathogen
 #mkdir -p ~/.vim/autoload ~/.vim/bundle && curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
@@ -75,7 +75,7 @@
 #git clone --depth=1 https://github.com/tpope/vim-surround.git ~/.vim/bundle/vim-surround
 
 # Install emmet-vim
-#git clone --depth=1 https://github.com/mattn/emmet-vim.git ~/.vim/bundle/emmet-vim
+git clone --depth=1 https://github.com/mattn/emmet-vim.git ~/.vim/bundle/emmet-vim
 
 # Grab my vimrc
 #git clone --depth=1 https://github.com/scirelli/vimrc.git ~/Downloads/vimrc
@@ -86,8 +86,8 @@
 ##############################
 # Synergy                    #
 ##############################
-#sudo apt-get install synergy
-#sudo apt-get install libcrypto++9
+#sudo apt-get -y install synergy
+#sudo apt-get -y install libcrypto++9
 #printf "[Desktop Entry]\nType=Application\nExec=synergyc --log /var/log/synergy.log Game-PC" > ~/.config/autostart/synergy.desktop
 #echo "#!/bin/bash" > ~/synergy2.sh
 #echo "sudo -u pi /usr/bin/synergyc --daemon --log /var/log/synergy.log Game-PC &" >> ~/synergy2.sh
@@ -107,5 +107,15 @@
 #chmod 744 ~/Documents/killDesktopGUI.sh
 # For retroPI get file system table. Need to add this to you /etc/fstab
 #git clone --depth=1 https://github.com/scirelli/pi_retro_fstab.git ~/Downloads/pi_retro_fstab
+##############################
+##############################
+
+##############################
+# Amazon Alexa               #
+##############################
+#git clone https://github.com/alexa/alexa-avs-sample-app.git ~/Projects/alexa-avs-sample-app
+#cp /tmp/oldHome/automated_install.sh ~/Projects/alexa-avs-sample-app
+#cd ~/Projects/alexa-avs-sample-app
+#. automated_install.sh
 ##############################
 ##############################
