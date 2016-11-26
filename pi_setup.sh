@@ -15,13 +15,12 @@
 ###############################
 # Update and Install Programs #
 ###############################
-#sudo apt-get update && sudo apt-get upgrade
+#sudo apt-get -y update && sudo apt-get -y upgrade
 
 #sudo apt-get -y install git
 #sudo apt-get -y install screen
 #sudo apt-get -y install vim
 #sudo apt-get -y install vim-gnome
-#sudo apt-get -y install npm
 ###############################
 ###############################
 
@@ -43,6 +42,16 @@
 #mkdir ~/.fonts
 ###############################
 ###############################
+
+##############################
+# Setup .bashrc              #
+##############################
+#echo "if [ -f ~/.bash_env_vars ]; then" \
+#"    . ~/.bash_env_vars" \
+#"fi" >> ~/.bashrc
+#touch ~/.bash_env_vars
+##############################
+##############################
 
 ##############################
 # Install fonts              #
@@ -117,5 +126,89 @@
 #cp /tmp/oldHome/automated_install.sh ~/Projects/alexa-avs-sample-app
 #cd ~/Projects/alexa-avs-sample-app
 #. automated_install.sh
+##############################
+##############################
+
+##############################
+# NGINX HTTP Server          #
+##############################
+#codename=jessie
+#sudo apt-key add nginx_signing.key
+#deb http://nginx.org/packages/debian/ ${codename} nginx
+#deb-src http://nginx.org/packages/debian/ ${codename} nginx
+#sudo apt-get update
+#sudo apt-get -y install nginx
+##############################
+##############################
+
+##############################
+# Nodejs                     #
+##############################
+#sudo apt-get -y isntall nodejs
+#cd ~/Downloads
+#wget https://nodejs.org/dist/v6.9.1/node-v6.9.1-linux-armv7l.tar.xz
+#tar -xvf node-v6.9.1-linux-armv7l.tar.xz
+#mv node-v6.9.1-linux-armv7l node6
+#sudo mv node6 /opt
+#sudo rm /usr/bin/node
+#sudo ln -s /opt/node6/bin/node /usr/bin/node
+#sudo rm /usr/bin/npm
+#sudo ln -s /opt/node6/bin/npm /usr/bin/npm
+##############################
+##############################
+
+##############################
+# NPM                        #
+##############################
+#sudo apt-get -y install npm
+##############################
+##############################
+
+##############################
+# Java Oracle for Pi         #
+##############################
+# Ensure we are running on Raspbian
+#lsb_release -a 2>/dev/null | grep Raspbian
+#if [ "$?" -ne "0" ]; then
+#    echo "This OS is not Raspbian. Exiting..."
+#    exit 1
+#fi
+
+# Determine which version of Raspbian we are running on
+#VERSION=`lsb_release -c 2>/dev/null | awk '{print $2}'`
+#echo "Version of Raspbian determined to be: $VERSION"
+
+#if [ "$VERSION" == "jessie" ]; then
+#    UBUNTU_VERSION="trusty"
+#elif [ "$VERSION" == "wheezy" ]; then
+#    UBUNTU_VERSION="precise"
+#else
+#    echo "Not running Raspbian Wheezy or Jessie. Exiting..."
+#    exit 1;
+#fi
+
+# Remove any existing Java
+#sudo apt-get -y autoremove
+#sudo apt-get -y remove --purge oracle-java8-jdk oracle-java7-jdk openjdk-7-jre openjdk-8-jre
+
+# Install Java from Ubuntu's PPA
+# http://linuxg.net/how-to-install-the-oracle-java-8-on-debian-wheezy-and-debian-jessie-via-repository/
+#sudo sh -c "echo \"deb http://ppa.launchpad.net/webupd8team/java/ubuntu $UBUNTU_VERSION main\" >> /etc/apt/sources.list"
+#sudo sh -c "echo \"deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu $UBUNTU_VERSION main\" >> /etc/apt/sources.list"
+#sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys EEA14886
+#sudo apt-get update
+#sudo apt-get -y install oracle-java8-installer
+#sudo apt-get -y install oracle-java8-set-default
+##############################
+##############################
+
+##############################
+# Tomcat                     #
+##############################
+#cd ~/Downloads
+#wget http://ftp.wayne.edu/apache/tomcat/tomcat-8/v8.5.8/bin/apache-tomcat-8.5.8.tar.gz
+#tar -zxvf apache-tomcat-8.5.8.tar.gz
+#mv apache-tomcat-8.5.8 tomcat8
+#sudo mv ~/Downloads/tomcat8 /opt
 ##############################
 ##############################
