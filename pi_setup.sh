@@ -17,11 +17,11 @@
 ###############################
 #sudo apt-get update && sudo apt-get upgrade
 
+#sudo apt-get -y install git
 #sudo apt-get -y install screen
 #sudo apt-get -y install vim
 #sudo apt-get -y install vim-gnome
 #sudo apt-get -y install npm
-#sudo apt-get -y install git
 ###############################
 ###############################
 
