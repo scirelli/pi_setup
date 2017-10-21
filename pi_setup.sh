@@ -4,7 +4,25 @@
 ############## This script was not written to handle failures #############
 ############## Update update while installing R PI Jessy      #############
 ###########################################################################
-
+###############################
+# Wifi Setup                  #
+###############################
+# https://www.raspberrypi.org/documentation/configuration/wireless/wireless-cli.md
+# sudo vi /etc/wpa_supplicant/wpa_supplicant.conf
+## WPA
+# network={
+#    ssid="testing"
+#    psk="testingPassword"
+#}
+## WEP
+# network={
+#	     ssid="example"
+#	     scan_ssid=1
+#	     key_mgmt=NONE
+#	     wep_tx_keyidx=0
+#	     wep_key0=42FEEDDEAFBABEDEAFBEEFAA55
+#     }
+     
 # This is what upgrade printed out.
 #Installed systemd unit for VNC Server in Virtual Mode daemon
 #Start or stop the service with:
