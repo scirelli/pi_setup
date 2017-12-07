@@ -1,0 +1,15 @@
+proc            /proc           proc    defaults          0       0
+PARTUUID=e356c0a0-01  /boot           vfat    defaults          0       2
+PARTUUID=e356c0a0-02  /               ext4    defaults,noatime  0       1
+# a swapfile is not a swap partition, no line here
+#   use  dphys-swapfile swap[on|off]  for that
+
+#//192.168.1.1/TmpShare/rpi_0_playground /mnt/TmpShare cifs gid=1003,credentials=/home/pi/.smbcredentials,iocharset=utf8,sec=ntlm 0 0
+#//192.168.1.1/TmpShare/rpi_0_playground/pi /home/pi/Extended cifs gid=1000,uid=1000,credentials=/home/pi/.smbcredentials,iocharset=utf8,sec=ntlm 0 0
+#//192.168.1.1/TmpShare/rpi_0_playground/ccirelli /home/ccirelli/Extended cifs gid=1001,uid=1001,credentials=/home/pi/.smbcredentials,iocharset=utf8,sec=ntlm 0 0
+
+UUID=b6624bfb-ecaf-487c-a4a4-032078a61953 /mnt/usbStorage ext3 nofail,defaults 0 0
+/mnt/usbStorage/data/rpi_0_playground/pi /home/pi/Extended none bind
+/mnt/usbStorage/data/rpi_0_playground/ccirelli /home/ccirelli/Extended none bind
+
+//192.168.1.1/TmpShare /mnt/TmpShare cifs gid=1003,credentials=/home/pi/.smbcredentials,iocharset=utf8,sec=ntlm 0 0
